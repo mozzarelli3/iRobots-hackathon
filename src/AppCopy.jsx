@@ -3,14 +3,19 @@ import "./App.css";
 
 function App() {
 
-  // store the value of text input
+  // store the value of text input. We need this to use to store in the messages and display the user input
   const [inputValue, setInputValue] = useState('');
-  const [request, setRequest] = useState('');
+  // this stores an array of messages in the chatbot. Keeps a list of all of the users messages and bot messages
+  const [messages, setMessages] = useState([]);
   
   // onSubmit display a message in chatbot-display div
   function handleSubmit(e) {
+    // prevents the forms default setting which reloads the page when the button is pressed.
     e.preventDefault();
-    setRequest(inputValue);
+    // this creates a new array that copys what is in messages already and adds an object with the input value
+    setMessages([...messages, {text: inputValue}])
+    // after the form is submitted, the input box becomes empty again
+    setInputValue('')
   };
 
   return (
@@ -21,7 +26,10 @@ function App() {
 
         <div id="chatbot-display">
           <p>Type in below for a movie recommendation</p>
-          {request}
+          {/* this loops through the messages array and creates a new p element for all of the messages. */}
+          {messages.map((message, index) => (
+            <p key={index}>{message.text}</p>
+          ))}
         </div>
 
         <form onSubmit={handleSubmit} id="chatbot-form">

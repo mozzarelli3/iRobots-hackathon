@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  
-
+  const handleSubmit = (e) => {
+    e.preventDeault();
+  };
 
   return (
     <>
@@ -13,13 +14,9 @@ function App() {
 
         <div id="chatbot-display">
           <p>Type in below for a movie recommendation</p>
-
-          
-
         </div>
 
-
-        <form id="chatbot-form">
+        <form onSubmit={handleSubmit} id="chatbot-form">
           <input
             type="text"
             placeholder="Type your movie preference..."
@@ -27,11 +24,9 @@ function App() {
           />
           <button type="submit">Send</button>
         </form>
-
       </div>
-    
     </>
-  )
+  );
 }
 
-export default App
+export default App;

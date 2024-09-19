@@ -6,6 +6,7 @@ function App() {
     e.preventDeault();
   };
 
+  
   return (
     <>
       <h1>Movie Recommendation Bot</h1>

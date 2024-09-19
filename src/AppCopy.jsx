@@ -8,7 +8,7 @@ function App() {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMDI1ODVhYWY3M2JjNDRlMWJiZjA5YTA2NjIxYzFkNyIsIm5iZiI6MTcyNjc2NTYxNS4wMDQ0MTIsInN1YiI6IjY2ZWM1ODRjNGEyY2QzZGM4ZDQ2YzUyZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.W8z_EKAG6qMSLJaOoHdSkMKKpnifPYWmaizQVKZ6BII'
+      Authorization: `Bearer ${import.meta.env.VITE_AUTH}`
     }
   };
   async function searchApi() {

@@ -5,7 +5,7 @@ function App() {
   const [messages, setMessages] = useState([]); // Array to store chat messages
   const [input, setInput] = useState(''); // Input state for the user's message
   
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = import.meta.env.VITE_API_KEY;
   console.log(apiKey);
   
   const baseURL = "https://api.themoviedb.org/3";

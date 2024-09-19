@@ -4,12 +4,13 @@ import "./App.css";
 function App() {
 
   // store the value of text input
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
+  const [request, setRequest] = useState('');
   
   // onSubmit display a message in chatbot-display div
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(inputValue)
+    setRequest(inputValue);
   };
 
   return (
@@ -20,6 +21,7 @@ function App() {
 
         <div id="chatbot-display">
           <p>Type in below for a movie recommendation</p>
+          {request}
         </div>
 
         <form onSubmit={handleSubmit} id="chatbot-form">

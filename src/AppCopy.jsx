@@ -2,11 +2,14 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+
+  // store the value of text input
+  const [inputValue, setInputValue] = useState('')
   
   // onSubmit display a message in chatbot-display div
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e)
+    console.log(inputValue)
   };
 
   return (
@@ -20,7 +23,13 @@ function App() {
         </div>
 
         <form onSubmit={handleSubmit} id="chatbot-form">
-          <input type="text" placeholder="Type your movie preference..." />
+          <label>Request: </label>
+          <input  
+            type="text" 
+            placeholder="Type your movie preference..."
+            onChange={(e) => {setInputValue(e.target.value)}}
+            value={inputValue} 
+          />
           <button type="submit">Send</button>
         </form>
       </div>

@@ -10,6 +10,7 @@ function App() {
   // stores the data that is received from the api
   const [data, setData] = useState('');
 
+  // links to the TMDB API
   async function searchApi() {
     const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
     const options = {
@@ -20,6 +21,7 @@ function App() {
       }
     };
 
+    // this gets data from the API and returns 
   try {
     const response = await fetch(url, options);
     const data = await response.json();
@@ -27,6 +29,7 @@ function App() {
       return `You want this movie: ${data.results[0].title}\nOverview: ${data.results[0].overview}`;
     } catch (error) {
       console.log('error, mate');
+      return 'ooooooooopppps, something went wrong'
     }
   
 }
@@ -34,12 +37,13 @@ function App() {
 async function handleSubmit(e) {
   e.preventDefault();
   const userMessage = { sender: 'user', text: inputValue};
-  setMessages([...messages, userMessage]);
+  if (userMessage.text !== '') {
+    setMessages([...messages, userMessage]);
 
   const botResponse = await searchApi();
   const botMessage = {sender: 'bot', text: botResponse};
   setMessages(prevMessages => [...prevMessages, botMessage]);
-
+  }
   setInputValue('');
 }
 

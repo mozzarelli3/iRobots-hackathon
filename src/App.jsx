@@ -97,14 +97,6 @@ function App() {
     setInput(''); // Clear input field
   };
 
-  // Defines a function to render the chat messages. It maps over the messages array, creating a div for each message, assigning a class based on whether it’s from the user or the bot.
-  const renderMessages = () =>
-    messages.map((msg, index) => (
-      <div key={index} className={msg.sender === 'user' ? 'user-message' : 'bot-message'}>
-        {msg.text}
-      </div>
-    ));
-
   // Returns the JSX structure for rendering the chat interface, including a title for the chatbot.
   return (
     <div className="chat-container">

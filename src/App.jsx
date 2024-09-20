@@ -23,7 +23,19 @@ function App() {
     war: 10752,
     family: 10751,
   };
-
+  const initialMessage = {
+    sender: 'bot',
+    text: `Welcome to FlickWizard! 📽️<br />
+           You can ask me for movie recommendations by typing something like:<br />
+           - "Recommend some action movies"<br />
+           - "Suggest a few comedy films"<br />
+           - "Give me horror movies"<br />
+           - "Show me some drama films"<br />
+           Just type your request below and hit send!`
+  };
+  useEffect(() => {
+    setMessages([initialMessage]);
+  }, []);
 
   // Creates a reference (messagesEndRef) that will point to the end of the messages list for scrolling.
   const messagesEndRef = useRef(null);
@@ -100,8 +112,9 @@ function App() {
   // Returns the JSX structure for rendering the chat interface, including a title for the chatbot.
   return (
     <div className="chat-container">
-      <h1>MovieBot</h1>
-      <div className="chat-history">
+      <h1>FlickWizard</h1>
+      <div className="chat-history"> 
+
 
         {/* Maps over the messages array to render each message. */}
         {messages.map((msg, index) => (

@@ -21,7 +21,7 @@ function App() {
       }
     };
 
-    // this gets data from the API and returns 
+    // this gets data from the API and returns a response from the API with error handling
   try {
     const response = await fetch(url, options);
     const data = await response.json();
@@ -35,17 +35,23 @@ function App() {
 }
   
 async function handleSubmit(e) {
+  // prevents normal submit behaviour, which by default, reloads the page 
   e.preventDefault();
-  const userMessage = { sender: 'user', text: inputValue};
+  // user message is an object so we can differentiate between user and bot messages. trim is added for if statement below
+  const userMessage = { sender: 'user', text: inputValue.trim()};
+  // if there is no text then add to the messages array
   if (userMessage.text !== '') {
+    // create a new array, copying what is in the messages array and adding the user message
     setMessages([...messages, userMessage]);
-
+    // waits for the API response 
   const botResponse = await searchApi();
   const botMessage = {sender: 'bot', text: botResponse};
+  // an arrow function that takes in the up to date messages array and adds the bot message
   setMessages(prevMessages => [...prevMessages, botMessage]);
   } else {
     setMessages([...messages, {sender: 'bot', text: 'enter some text buddy'}])
   }
+  // resets the input to empty once the send button is pressed
   setInputValue('');
 }
 

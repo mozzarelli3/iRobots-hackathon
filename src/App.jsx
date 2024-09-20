@@ -81,7 +81,7 @@ function App() {
     setMessages(newMessages);
 
     // Uses a regular expression to check if the input matches the pattern for asking for movie recommendations by genre.
-    const genreMatch = input.match(/recommend some (.*) movies/i);
+    const genreMatch = input.match(/(?:recommend|suggest|show|give me|find) (?:some|any|a few|) (.*) (?:movies|films)/i);
     // Initializes a variable responseText to hold the bot's response.
     let responseText;
     // If a genre is matched, extracts the genre name, fetches movie recommendations for that genre, and sets the response text. If no match is found, sets a default response message.

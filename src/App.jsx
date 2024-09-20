@@ -25,7 +25,7 @@ function App() {
   };
   const initialMessage = {
     sender: 'bot',
-    text: `Welcome to FlickWizard! 📽️<br />
+    text: `Welcome to FilmWizard! 📽️<br />
            You can ask me for movie recommendations by typing something like:<br />
            - "Recommend some action movies"<br />
            - "Suggest a few comedy films"<br />
@@ -112,7 +112,7 @@ function App() {
   // Returns the JSX structure for rendering the chat interface, including a title for the chatbot.
   return (
     <div className="chat-container">
-      <h1>FlickWizard</h1>
+      <h1>FilmWizard</h1>
       <div className="chat-history"> 
 
 

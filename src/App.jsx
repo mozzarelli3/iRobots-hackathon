@@ -22,7 +22,6 @@ function App() {
     mystery: 9648,
     war: 10752,
     family: 10751,
-    // Add more genres as needed
   };
 
 
@@ -60,7 +59,7 @@ function App() {
 
       // Create a response listing the top 3 movies
       // Maps over the movie results to create an HTML string for each movie, including the title, release year, and overview, then joins them with line breaks for spacing.
-      return movies.map(movie => `<strong>${movie.title} (${movie.release_date.split('-')[0]}):</strong><br>${movie.overview}`).join('<br><br>'); // Use join to add a break between movies
+      return movies.map(movie => `<strong>${movie.title} (${movie.release_date.split('-')[0]}):</strong><br>${movie.overview}`).join('<br><br>'); 
     // Catches any errors that occur during the API call and returns an error message.
     } catch (error) {
       return `Error fetching movie recommendations: ${error.message}`;

@@ -116,7 +116,7 @@ function App() {
         {messages.map((msg, index) => (
           
           // For each message, creates a div with a key and a class that indicates whether the message is from the user or the bot.
-          <div key={index} className={msg.sender === 'user' ? 'user-message' : 'bot-message'}>
+          <div key={index} class={msg.sender === 'user' ? 'user-message' : 'bot-message'}>
             
             {/* Renders the bot’s message using dangerouslySetInnerHTML to interpret HTML, while the user’s message is displayed as plain text. */}
             {msg.sender === 'bot' ? (

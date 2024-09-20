@@ -29,7 +29,7 @@ function App() {
            You can ask me for movie recommendations by typing something like:<br />
            - "Recommend some action movies"<br />
            - "Suggest a few comedy films"<br />
-           - "Give me horror movies"<br />
+           - "Give me any horror movies"<br />
            - "Show me some drama films"<br />
            Just type your request below and hit send!`
   };

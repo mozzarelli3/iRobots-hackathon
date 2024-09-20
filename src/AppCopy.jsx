@@ -67,7 +67,7 @@ async function handleSubmit(e) {
           {messages.map((message, index) => (
             <p key={index}>{message.text}</p>
           ))}
-          {data && <img src={`https://image.tmdb.org/t/p/w500/${data}`} />}
+          {data && <img src={`https://image.tmdb.org/t/p/w200/${data}`} />}
         </div>
 
         <form onSubmit={handleSubmit} id="chatbot-form">

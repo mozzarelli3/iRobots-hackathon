@@ -43,6 +43,8 @@ async function handleSubmit(e) {
   const botResponse = await searchApi();
   const botMessage = {sender: 'bot', text: botResponse};
   setMessages(prevMessages => [...prevMessages, botMessage]);
+  } else {
+    setMessages([...messages, {sender: 'bot', text: 'enter some text buddy'}])
   }
   setInputValue('');
 }
